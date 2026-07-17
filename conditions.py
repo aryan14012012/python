@@ -6,7 +6,7 @@ print("City:",city)
 print("Temperature:", temp)
 
 
-# if statement
+# if statement------------------------------------------------
 
 
 if temp > 35:
@@ -25,10 +25,10 @@ else:
     
     
     
-# datetime-module
+# datetime-module------------------------------------------------
 
 import datetime
-import calender
+import calendar
 
 
 
@@ -37,7 +37,43 @@ print("City:", city)
 print("Time now", now)
 
 
-print(calender.calender(now.year))
+print("Time now:", now.strftime("%Y-%m-%H:%M:%S"))
+print("\n--- Year Calendar ---")
 
 
+print(calendar.calendar(now.year))
+
+
+
+#other-project's------------------------------------------
+
+number = int(input("Enter Number to check")) 
+print("Number to be checked :", number)
+
+if number%2==0:
+    print("This is an even number")
+else:
+    print("This is an odd number")
+    
+    
+    
+    # another -------------------------------------------
+    
+    num = int(input("Enter number to check :"))
+    
+    if num > 50:
+        print("Number is greater than 50")
+        if num % 2 == 0:
+            print("And it is even too")
+        else:
+            print("And it is odd")
+    else:
+        print("Number is less than 50")
+
+    print("Number is less than 50")
+    
+    
+
+    
+    
 
