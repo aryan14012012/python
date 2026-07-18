@@ -10,5 +10,15 @@ for i in range(1,n+1):
       print('*', end='')    
     print()
         
+     #while-------------------------------------------
      
+total_sum= 0
+num = 1
+      
+      
+while num <=10:
+          total_sum += num
+          num += 1
+          
+print(f"The sum of the first ten natural number is {total_sum}")
 
