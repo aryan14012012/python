@@ -66,26 +66,16 @@ animatedElements.forEach(element => {
 });
 
 
-// --- Active Nav Link Highlight on Scroll ---
-const sections = document.querySelectorAll('section');
+// --- Active Nav Link Highlight Based on Current Page ---
 const navItems = document.querySelectorAll('.nav-links a');
+const currentPage = window.location.pathname;
 
-window.addEventListener('scroll', () => {
-    let currentSectionId = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            currentSectionId = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').slice(1) === currentSectionId) {
-            item.classList.add('active');
-        }
-    });
+navItems.forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('href') === currentPage || 
+        (currentPage.endsWith('/') && item.getAttribute('href') === 'index.html')) {
+        item.classList.add('active');
+    }
 });
 
 
