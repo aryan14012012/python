@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Shyama Engineering</title>
+    <meta name="description" content="Contact Shyama Engineering for precision automotive components. Get in touch for quotes, inquiries, or technical support. ISO certified manufacturer serving global clients.">
+    <meta name="keywords" content="contact Shyama Engineering, automotive components manufacturer, get quote, engineering services, manufacturing partner">
+    <meta name="author" content="Shyama Engineering">
+    <meta property="og:title" content="Contact Us | Shyama Engineering | Get In Touch">
+    <meta property="og:description" content="Get in touch with Shyama Engineering for precision automotive components and engineering solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shyamaengineering.com/contact.html">
+    <meta property="og:image" content="logo3.png">
+    <title>Contact Us | Shyama Engineering | Automotive & Precision Parts</title>
     <link rel="stylesheet" href="shyama.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -13,7 +24,7 @@
         <div class="logo">
             <a href="index.html" class="logo-link">
                 <img src="logo3.png" alt="Shyama Engineering Logo" class="nav-logo">
-                <h2>Shyam Engineering</h2>
+                <h2>Shyama Engineering</h2>
             </a>
         </div>
         <nav>
@@ -25,46 +36,102 @@
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <!-- Contact Hero Section -->
-    <section class="hero" style="height: 60vh;">
+    <section class="hero" style="height: 60vh; min-height: 500px;">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Get In Touch</h1>
-            <p>We'd love to hear from you. Let's discuss your automotive engineering needs.</p>
+            <p>We'd love to hear from you. Let's discuss your automotive engineering needs and how we can help you achieve your goals.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Send Message</a>
+                <a href="tel:+919876543210" class="btn-secondary">Call Us Now</a>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section-padding">
         <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-desc">Reach out to us for inquiries, quotes, or technical support</p>
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>Plot 45, Sector Industrial Area,<br>Haryana, India - 134101</p>
-                    <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br>+91 98765 43210<br>+91 98765 43211</p>
-                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br>info@shyamaengineering.com<br>sales@shyamaengineering.com</p>
-                    <p><i class="fas fa-clock"></i> <strong>Business Hours:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                    <h3>Get In Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Plot 45, Sector Industrial Area,<br>Haryana, India - 134101</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            <p><a href="tel:+919876543211">+91 98765 43211</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a></p>
+                            <p><a href="mailto:sales@shyamaengineering.com">sales@shyamaengineering.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <h3 style="margin-bottom: 20px;">Send Us a Message</h3>
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Full Name" required>
+                    <h3 style="margin-bottom: 20px; color: var(--text-color);">Send Us a Message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Enter your company name">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Your Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="company" placeholder="Company Name (Optional)">
-                    </div>
-                    <div class="form-group">
-                        <select id="subject" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--input-bg); color: var(--text-color);">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
                             <option value="">Select Subject</option>
                             <option value="general">General Inquiry</option>
                             <option value="products">Product Inquiry</option>
@@ -74,9 +141,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="6" placeholder="Tell us about your project or inquiry..." required></textarea>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project or inquiry..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                     <p id="formStatus" class="form-status"></p>
                 </form>
             </div>
@@ -88,49 +158,178 @@
         <div class="container">
             <h2 class="section-title">Our Location</h2>
             <p class="section-desc">Visit our manufacturing facility in Haryana, India</p>
-            <div style="width: 100%; height: 400px; background: #e0e0e0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #666;">
+            <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #666; border: 2px dashed var(--border-color);">
                 <div style="text-align: center;">
-                    <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 15px;"></i>
-                    <p style="font-size: 1.1rem;"><strong>Shyama Engineering</strong></p>
-                    <p>Plot 45, Sector Industrial Area, Haryana, India</p>
-                    <p style="margin-top: 10px; color: var(--text-light);">[Map integration available]</p>
+                    <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 20px; display: block;"></i>
+                    <p style="font-size: 1.2rem; color: var(--text-color); margin-bottom: 10px;"><strong>Shyama Engineering</strong></p>
+                    <p style="color: var(--text-light); margin-bottom: 10px;">Plot 45, Sector Industrial Area, Haryana, India</p>
+                    <p style="color: var(--text-light); font-size: 0.95rem;">[Map integration available - Add Google Maps or OpenStreetMap embed]</p>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top: 20px; display: inline-block;">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Additional Contact Options -->
-    <section class="contact section-padding">
+    <section class="services section-padding">
         <div class="container">
             <h2 class="section-title">Other Ways to Reach Us</h2>
+            <p class="section-desc">Choose the most convenient way to connect with our team</p>
             <div class="services-grid">
                 <div class="service-box" style="text-align: center;">
                     <i class="fas fa-phone-volume"></i>
                     <h3>Call Us</h3>
-                    <p>Speak directly with our sales and support team for immediate assistance.</p>
-                    <p style="margin-top: 15px; color: var(--primary-color); font-weight: bold;">+91 98765 43210</p>
+                    <p>Speak directly with our sales and support team for immediate assistance with your queries.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="tel:+919876543210" style="color: var(--primary-color); font-weight: 600; text-decoration: none; font-size: 1.1rem;">+91 98765 43210</a>
+                    </div>
                 </div>
                 <div class="service-box" style="text-align: center;">
                     <i class="fas fa-envelope-open-text"></i>
                     <h3>Email Us</h3>
-                    <p>Send us your requirements and we'll respond within 24 hours.</p>
-                    <p style="margin-top: 15px; color: var(--primary-color); font-weight: bold;">info@shyamaengineering.com</p>
+                    <p>Send us your requirements and we'll respond within 24 hours with a detailed response.</p>
+                    <div style="margin-top: 20px;">
+                        <a href="mailto:info@shyamaengineering.com" style="color: var(--primary-color); font-weight: 600; text-decoration: none; font-size: 1rem;">info@shyamaengineering.com</a>
+                    </div>
                 </div>
                 <div class="service-box" style="text-align: center;">
                     <i class="fas fa-calendar-check"></i>
                     <h3>Schedule a Visit</h3>
-                    <p>Book an appointment to tour our manufacturing facility and meet our team.</p>
-                    <a href="contact.html" class="btn-secondary" style="margin-top: 15px; display: inline-block;">Request Appointment</a>
+                    <p>Book an appointment to tour our manufacturing facility and meet our expert team.</p>
+                    <a href="contact.html" class="btn-secondary" style="margin-top: 20px; display: inline-block;">Request Appointment</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="why-us section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Quick answers to common questions</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-question-circle"></i>
+                    <div>
+                        <h4>What is your minimum order quantity?</h4>
+                        <p>We accept orders of all sizes, from prototype runs to large-scale production. Contact us to discuss your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-question-circle"></i>
+                    <div>
+                        <h4>What are your lead times?</h4>
+                        <p>Lead times vary based on complexity and volume. Typically, prototypes take 2-4 weeks, while production orders take 4-8 weeks.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-question-circle"></i>
+                    <div>
+                        <h4>Do you ship internationally?</h4>
+                        <p>Yes, we ship to clients in 15+ countries worldwide. We use reliable logistics partners to ensure safe and timely delivery.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-question-circle"></i>
+                    <div>
+                        <h4>What quality certifications do you have?</h4>
+                        <p>We are ISO 9001:2015 and IATF 16949 certified, ensuring the highest quality standards in all our processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Get in touch with our team for a free consultation and quote. Let's discuss how we can help you achieve your manufacturing goals.</p>
+                <a href="mailto:info@shyamaengineering.com" class="btn-primary">Email Us Today</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shyama Engineering. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo3.png" alt="Shyama Engineering Logo">
+                        <h3>Shyama Engineering</h3>
+                    </div>
+                    <p>Leading manufacturer of precision automotive components with over 25 years of excellence in engineering and innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">Engine Components</a></li>
+                        <li><a href="products.html">Chassis Assemblies</a></li>
+                        <li><a href="products.html">Transmission Parts</a></li>
+                        <li><a href="products.html">Precision Machined Parts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot 45, Sector Industrial Area, Haryana, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shyama Engineering. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Automotive Excellence</p>
+            </div>
+        </div>
     </footer>
 
     <script src="shyama.js"></script>
+    
+    <!-- Schema.org structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Shyama Engineering",
+        "description": "Contact page for Shyama Engineering - Precision automotive components manufacturer",
+        "url": "https://www.shyamaengineering.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Shyama Engineering",
+            "telephone": "+91-98765-43210",
+            "email": "info@shyamaengineering.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Plot 45, Sector Industrial Area",
+                "addressLocality": "Haryana",
+                "addressCountry": "IN"
+            }
+        }
+    }
+    </script>
 </body>
 </html>

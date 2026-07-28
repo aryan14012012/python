@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Shyama Engineering</title>
+    <meta name="description" content="Shyama Engineering offers comprehensive engineering services including CNC machining, prototyping, CAD design, stress testing, precision grinding, and quality assurance for automotive components.">
+    <meta name="keywords" content="CNC machining, prototyping, CAD design, stress testing, precision grinding, quality assurance, automotive engineering services, manufacturing services">
+    <meta name="author" content="Shyama Engineering">
+    <meta property="og:title" content="Services | Shyama Engineering | Engineering Solutions">
+    <meta property="og:description" content="Comprehensive manufacturing and engineering solutions tailored to your automotive needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shyamaengineering.com/services.html">
+    <meta property="og:image" content="logo3.png">
+    <title>Services | Shyama Engineering | Automotive & Precision Parts</title>
     <link rel="stylesheet" href="shyama.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -13,7 +24,7 @@
         <div class="logo">
             <a href="index.html" class="logo-link">
                 <img src="logo3.png" alt="Shyama Engineering Logo" class="nav-logo">
-                <h2>Shyam Engineering</h2>
+                <h2>Shyama Engineering</h2>
             </a>
         </div>
         <nav>
@@ -25,22 +36,36 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <!-- Services Hero Section -->
-    <section class="hero" style="height: 60vh;">
+    <section class="hero" style="height: 60vh; min-height: 500px;">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Engineering Services</h1>
-            <p>Comprehensive manufacturing and engineering solutions tailored to your needs.</p>
+            <p>Comprehensive manufacturing and engineering solutions tailored to your needs. From concept to delivery, we deliver excellence at every step.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Our Services</a>
+                <a href="contact.html" class="btn-secondary">Get Consultation</a>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services section-padding">
         <div class="container">
+            <h2 class="section-title">Our Engineering Services</h2>
+            <p class="section-desc">End-to-end manufacturing solutions designed to meet the highest industry standards</p>
             <div class="services-grid">
                 <div class="service-box">
                     <i class="fas fa-cogs"></i>
@@ -120,42 +145,241 @@
     <section class="services section-padding">
         <div class="container">
             <h2 class="section-title">Our Capabilities</h2>
+            <p class="section-desc">Technical expertise that sets us apart</p>
             <div class="services-grid">
                 <div class="service-box">
                     <i class="fas fa-ruler-combined"></i>
                     <h3>Precision Tolerances</h3>
-                    <p>±0.001mm accuracy for critical components requiring exact specifications.</p>
+                    <p>±0.001mm accuracy for critical components requiring exact specifications. Our advanced measurement systems ensure consistent precision across all production runs.</p>
                 </div>
                 <div class="service-box">
                     <i class="fas fa-weight-hanging"></i>
                     <h3>Material Expertise</h3>
-                    <p>Steel, aluminum, titanium, brass, and specialized alloys for diverse applications.</p>
+                    <p>Steel, aluminum, titanium, brass, and specialized alloys for diverse applications. We work with a wide range of materials to meet your specific performance requirements.</p>
                 </div>
                 <div class="service-box">
                     <i class="fas fa-sync-alt"></i>
                     <h3>Quick Turnaround</h3>
-                    <p>Rapid prototyping and production with flexible scheduling to meet your deadlines.</p>
+                    <p>Rapid prototyping and production with flexible scheduling to meet your deadlines. Our efficient processes ensure fast delivery without compromising on quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Services?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Expert Team</h4>
+                        <p>200+ experienced engineers and technicians</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Advanced Technology</h4>
+                        <p>5-axis CNC machines and automated systems</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Quality Certified</h4>
+                        <p>ISO 9001:2015 and IATF 16949 certified</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Cost Effective</h4>
+                        <p>Competitive pricing with no quality compromise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-desc">Trusted by leading automotive manufacturers worldwide</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Shyama Engineering's CNC machining services are exceptional. Their precision and attention to detail have made them our go-to partner for critical components."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VK</div>
+                        <div class="author-info">
+                            <h4>Vikram Khanna</h4>
+                            <p>Procurement Director, AutoTech Industries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Their prototyping service helped us reduce our product development cycle by 40%. The team's expertise in CAD design and rapid prototyping is outstanding."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h4>Anita Singh</h4>
+                            <p>R&D Head, Global Motors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The quality assurance processes at Shyama Engineering are world-class. Every component undergoes rigorous testing, ensuring zero defects in our supply chain."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MP</div>
+                        <div class="author-info">
+                            <h4>Manoj Patel</h4>
+                            <p>Quality Manager, SpeedDrive Components</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Certifications</h2>
+            <p class="section-desc">Compliance with international quality standards</p>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management System</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>IATF 16949</h4>
+                    <p>Automotive Quality Management</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 14001</h4>
+                    <p>Environmental Management</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>OHSAS 18001</h4>
+                    <p>Occupational Health & Safety</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="contact section-padding bg-light">
+    <section class="cta-section">
         <div class="container">
-            <h2 class="section-title">Ready to Start Your Project?</h2>
-            <p class="section-desc">Let's discuss how we can help you with your manufacturing needs.</p>
-            <div style="text-align: center; margin-top: 30px;">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss how we can help you with your manufacturing needs. Get a free consultation and quote today.</p>
                 <a href="contact.html" class="btn-primary">Contact Us Today</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shyama Engineering. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo3.png" alt="Shyama Engineering Logo">
+                        <h3>Shyama Engineering</h3>
+                    </div>
+                    <p>Leading manufacturer of precision automotive components with over 25 years of excellence in engineering and innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">Engine Components</a></li>
+                        <li><a href="products.html">Chassis Assemblies</a></li>
+                        <li><a href="products.html">Transmission Parts</a></li>
+                        <li><a href="products.html">Precision Machined Parts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot 45, Sector Industrial Area, Haryana, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shyama Engineering. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Automotive Excellence</p>
+            </div>
+        </div>
     </footer>
 
     <script src="shyama.js"></script>
+    
+    <!-- Schema.org structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Shyama Engineering Services",
+        "description": "Comprehensive automotive engineering and manufacturing services",
+        "url": "https://www.shyamaengineering.com/services.html",
+        "provider": {
+            "@type": "Organization",
+            "name": "Shyama Engineering",
+            "url": "https://www.shyamaengineering.com"
+        },
+        "serviceType": [
+            "CNC Machining",
+            "Prototyping",
+            "CAD Design",
+            "Stress Testing",
+            "Precision Grinding",
+            "Quality Assurance"
+        ],
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-98765-43210",
+            "contactType": "customer service"
+        }
+    }
+    </script>
 </body>
 </html>

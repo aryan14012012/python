@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Shyama Engineering</title>
+    <meta name="description" content="Explore Shyama Engineering's precision automotive components - engine parts, chassis assemblies, transmission gears, brake systems, and custom manufacturing solutions.">
+    <meta name="keywords" content="automotive components, engine parts, chassis assemblies, transmission gears, brake systems, suspension components, steering systems, precision machined parts">
+    <meta name="author" content="Shyama Engineering">
+    <meta property="og:title" content="Products | Shyama Engineering | Automotive Components">
+    <meta property="og:description" content="High-precision automotive components engineered for performance and durability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shyamaengineering.com/products.html">
+    <meta property="og:image" content="logo3.png">
+    <title>Products | Shyama Engineering | Automotive & Precision Parts</title>
     <link rel="stylesheet" href="shyama.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -13,7 +24,7 @@
         <div class="logo">
             <a href="index.html" class="logo-link">
                 <img src="logo3.png" alt="Shyama Engineering Logo" class="nav-logo">
-                <h2>Shyam Engineering</h2>
+                <h2>Shyama Engineering</h2>
             </a>
         </div>
         <nav>
@@ -25,25 +36,41 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <!-- Products Hero Section -->
-    <section class="hero" style="height: 60vh;">
+    <section class="hero" style="height: 60vh; min-height: 500px;">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Our Automotive Products</h1>
-            <p>Engineered for absolute performance under extreme conditions.</p>
+            <p>Engineered for absolute performance under extreme conditions. Precision-crafted components trusted by leading automotive manufacturers worldwide.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary">View Products</a>
+                <a href="contact.html" class="btn-secondary">Request Quote</a>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
     <section id="products" class="products section-padding">
         <div class="container">
+            <h2 class="section-title">Our Product Range</h2>
+            <p class="section-desc">Comprehensive solutions for all your automotive component needs</p>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400" alt="Engine Components">
+                    <div class="product-image">
+                        <i class="fas fa-cog"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Precision Engine Parts</h3>
                         <p>High-tolerance machined components built for peak thermal and mechanical efficiency. Our engine parts are manufactured using advanced CNC machining techniques to ensure perfect fit and optimal performance.</p>
@@ -51,7 +78,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400" alt="Chassis Assemblies">
+                    <div class="product-image">
+                        <i class="fas fa-car"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Chassis Assemblies</h3>
                         <p>Robust structural steel and alloy frames designed to absorb shock and protect payload. Engineered for maximum durability and safety in the most demanding driving conditions.</p>
@@ -59,7 +88,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400" alt="Transmission Gears">
+                    <div class="product-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Transmission Gears</h3>
                         <p>Optimized gear tooth designs for smooth torque transfer and minimal friction loss. Precision-ground gears that ensure seamless power delivery and extended transmission life.</p>
@@ -67,7 +98,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400" alt="Brake Systems">
+                    <div class="product-image">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Brake Systems</h3>
                         <p>High-performance brake components including discs, calipers, and pads designed for superior stopping power and heat dissipation under extreme conditions.</p>
@@ -75,7 +108,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400" alt="Suspension Components">
+                    <div class="product-image">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Suspension Components</h3>
                         <p>Precision-engineered suspension parts that provide optimal ride comfort and handling. Built to withstand harsh road conditions while maintaining vehicle stability.</p>
@@ -83,7 +118,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400" alt="Steering Systems">
+                    <div class="product-image">
+                        <i class="fas fa-steering-wheel"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Steering Systems</h3>
                         <p>Reliable steering components including racks, pinions, and tie rods. Precision-manufactured for accurate steering response and enhanced driver control.</p>
@@ -94,22 +131,177 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="contact section-padding bg-light">
+    <!-- Why Choose Our Products Section -->
+    <section class="why-us section-padding bg-light">
         <div class="container">
-            <h2 class="section-title">Need Custom Solutions?</h2>
-            <p class="section-desc">We specialize in custom manufacturing to meet your specific requirements.</p>
-            <div style="text-align: center; margin-top: 30px;">
+            <h2 class="section-title">Why Choose Our Products?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Superior Quality</h4>
+                        <p>Manufactured with premium materials and precision engineering</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>ISO Certified</h4>
+                        <p>All products meet international quality standards</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Custom Solutions</h4>
+                        <p>Tailored manufacturing to meet your exact specifications</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Competitive Pricing</h4>
+                        <p>Best value without compromising on quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="services section-padding">
+        <div class="container">
+            <h2 class="section-title">Product Categories</h2>
+            <p class="section-desc">Diverse range of automotive components for every need</p>
+            <div class="services-grid">
+                <div class="service-box">
+                    <i class="fas fa-engine-warning"></i>
+                    <h3>Engine Components</h3>
+                    <p>Pistons, crankshafts, camshafts, valves, and other critical engine parts designed for optimal performance and longevity.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-car-battery"></i>
+                    <h3>Electrical Systems</h3>
+                    <p>Wiring harnesses, sensors, control modules, and electrical components for modern automotive systems.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-oil-can"></i>
+                    <h3>Fluid Systems</h3>
+                    <p>Pumps, valves, filters, and fluid handling components for efficient automotive fluid management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Custom Automotive Components?</h2>
+                <p>We specialize in custom manufacturing to meet your specific requirements. Get in touch for a personalized solution.</p>
                 <a href="contact.html" class="btn-primary">Request a Quote</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shyama Engineering. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo3.png" alt="Shyama Engineering Logo">
+                        <h3>Shyama Engineering</h3>
+                    </div>
+                    <p>Leading manufacturer of precision automotive components with over 25 years of excellence in engineering and innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">Engine Components</a></li>
+                        <li><a href="products.html">Chassis Assemblies</a></li>
+                        <li><a href="products.html">Transmission Parts</a></li>
+                        <li><a href="products.html">Precision Machined Parts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot 45, Sector Industrial Area, Haryana, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shyama Engineering. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Automotive Excellence</p>
+            </div>
+        </div>
     </footer>
 
     <script src="shyama.js"></script>
+    
+    <!-- Schema.org structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Shyama Engineering Products",
+        "description": "Precision automotive components and parts",
+        "url": "https://www.shyamaengineering.com/products.html",
+        "numberOfItems": 6,
+        "itemListElement": [
+            {
+                "@type": "Product",
+                "name": "Precision Engine Parts",
+                "description": "High-tolerance machined components for peak efficiency"
+            },
+            {
+                "@type": "Product",
+                "name": "Chassis Assemblies",
+                "description": "Robust structural frames for maximum durability"
+            },
+            {
+                "@type": "Product",
+                "name": "Transmission Gears",
+                "description": "Optimized gears for smooth torque transfer"
+            },
+            {
+                "@type": "Product",
+                "name": "Brake Systems",
+                "description": "High-performance brake components"
+            },
+            {
+                "@type": "Product",
+                "name": "Suspension Components",
+                "description": "Precision-engineered suspension parts"
+            },
+            {
+                "@type": "Product",
+                "name": "Steering Systems",
+                "description": "Reliable steering components"
+            }
+        ]
+    }
+    </script>
 </body>
 </html>

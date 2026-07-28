@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shyama Engineering | Automotive & Precision Parts</title>
+    <meta name="description" content="Shyama Engineering - Leading manufacturer of precision automotive components, chassis assemblies, and transmission parts. ISO certified quality for global automotive industry.">
+    <meta name="keywords" content="automotive engineering, precision parts, chassis assemblies, transmission gears, CNC machining, ISO certified, automotive components, manufacturing">
+    <meta name="author" content="Shyama Engineering">
+    <meta property="og:title" content="Shyama Engineering | Automotive & Precision Parts">
+    <meta property="og:description" content="World-class manufacturing of automotive components with ISO certified quality standards.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shyamaengineering.com">
+    <meta property="og:image" content="logo3.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Shyama Engineering | Automotive & Precision Parts Manufacturer</title>
     <link rel="stylesheet" href="shyama.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -18,24 +30,49 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="shyama.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Driving Innovation in Automotive Engineering</h1>
             <p>High-precision components, durable chassis structures, and advanced manufacturing solutions tailored for global automotive leaders.</p>
-            <a href="products.html" class="btn-primary">Explore Products</a>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn-primary">Explore Products</a>
+                <a href="contact.html" class="btn-secondary">Get Quote</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Clients Worldwide</p>
+            </div>
+            <div class="stat-item">
+                <h3>10K+</h3>
+                <p>Products Delivered</p>
+            </div>
         </div>
     </section>
 
@@ -71,7 +108,9 @@
             <p class="section-desc">Engineered for absolute performance under extreme conditions.</p>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="https://unsplash.com" alt="Engine Components">
+                    <div class="product-image">
+                        <i class="fas fa-cog"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Precision Engine Parts</h3>
                         <p>High-tolerance machined components built for peak thermal and mechanical efficiency.</p>
@@ -79,7 +118,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://unsplash.com" alt="Chassis Assemblies">
+                    <div class="product-image">
+                        <i class="fas fa-car"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Chassis Assemblies</h3>
                         <p>Robust structural steel and alloy frames designed to absorb shock and protect payload.</p>
@@ -87,7 +128,9 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://unsplash.com" alt="Transmission Gears">
+                    <div class="product-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <div class="product-info">
                         <h3>Transmission Gears</h3>
                         <p>Optimized gear tooth designs for smooth torque transfer and minimal friction loss.</p>
@@ -102,6 +145,7 @@
     <section id="services" class="services section-padding">
         <div class="container">
             <h2 class="section-title">Engineering Services</h2>
+            <p class="section-desc">Comprehensive manufacturing solutions from design to delivery</p>
             <div class="services-grid">
                 <div class="service-box">
                     <i class="fas fa-cogs"></i>
@@ -122,30 +166,219 @@
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="why-us section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Why Choose Shyama Engineering?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>ISO 9001:2015 Certified</h4>
+                        <p>International quality management standards</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>State-of-the-Art Infrastructure</h4>
+                        <p>50,000+ sq ft manufacturing facility</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Advanced Technology</h4>
+                        <p>5-axis CNC machines & automated systems</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Timely Delivery</h4>
+                        <p>98% on-time delivery record</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Competitive Pricing</h4>
+                        <p>Cost-effective solutions without quality compromise</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Global Export</h4>
+                        <p>Serving clients in 15+ countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Shyama Engineering has been our trusted partner for over 10 years. Their precision and quality is unmatched in the industry."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Procurement Head, AutoTech Industries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Exceptional quality control and on-time delivery. They understand our technical requirements perfectly."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Quality Manager, Global Motors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Their engineering team provided innovative solutions that improved our product performance significantly."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Amit Patel</h4>
+                            <p>CEO, SpeedDrive Components</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Certifications & Partners</h2>
+            <div class="certifications-grid">
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 9001:2015</h4>
+                    <p>Quality Management</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>IATF 16949</h4>
+                    <p>Automotive Quality</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>ISO 14001</h4>
+                    <p>Environmental Management</p>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>OHSAS 18001</h4>
+                    <p>Safety Standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact section-padding bg-light">
+    <section id="contact" class="contact section-padding">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
+            <p class="section-desc">Let's discuss your automotive component requirements</p>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Plot 45, Sector Industrial Area, Haryana, India</p>
-                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                    <p><i class="fas fa-envelope"></i> info@shyamaengineering.com</p>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Plot 45, Sector Industrial Area, Haryana, India</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Enter your company name">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">Send Message</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                     <p id="formStatus" class="form-status"></p>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Get in touch with our engineering team for customized automotive solutions</p>
+                <a href="contact.html" class="btn-primary">Request a Quote</a>
             </div>
         </div>
     </section>
@@ -157,19 +390,102 @@
             <h2>Product Inquiry</h2>
             <p id="modalProductName"></p>
             <form onsubmit="handleModalSubmit(event)">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Specific Requirements / Quantity" rows="3" required></textarea>
+                <div class="form-group">
+                    <label for="modalName">Your Name *</label>
+                    <input type="text" id="modalName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalEmail">Your Email *</label>
+                    <input type="email" id="modalEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalRequirements">Specific Requirements / Quantity *</label>
+                    <textarea id="modalRequirements" rows="3" placeholder="Describe your requirements..." required></textarea>
+                </div>
                 <button type="submit" class="btn-primary">Submit Inquiry</button>
             </form>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Shyama Engineering. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo3.png" alt="Shyama Engineering Logo">
+                        <h3>Shyama Engineering</h3>
+                    </div>
+                    <p>Leading manufacturer of precision automotive components with over 25 years of excellence in engineering and innovation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">Engine Components</a></li>
+                        <li><a href="products.html">Chassis Assemblies</a></li>
+                        <li><a href="products.html">Transmission Parts</a></li>
+                        <li><a href="products.html">Precision Machined Parts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Plot 45, Sector Industrial Area, Haryana, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@shyamaengineering.com">info@shyamaengineering.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shyama Engineering. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Automotive Excellence</p>
+            </div>
+        </div>
     </footer>
 
     <script src="shyama.js"></script>
+    
+    <!-- Schema.org structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Shyama Engineering",
+        "description": "Leading manufacturer of precision automotive components",
+        "url": "https://www.shyamaengineering.com",
+        "logo": "logo3.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-98765-43210",
+            "contactType": "sales",
+            "areaServed": "IN",
+            "availableLanguage": "English"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 45, Sector Industrial Area",
+            "addressLocality": "Haryana",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
 </body>
 </html>
