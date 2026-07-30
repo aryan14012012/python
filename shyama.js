@@ -14,6 +14,8 @@ if (mobileMenu && navLinks) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
     });
 
     // Close mobile menu when a link is clicked
@@ -21,13 +23,23 @@ if (mobileMenu && navLinks) {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
 }
 
 // --- Navbar Scroll Effect ---
 let lastScroll = 0;
-window.addEventListener('scroll', () => {
+const scrollHandler = () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
@@ -37,7 +49,9 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
-});
+};
+
+window.addEventListener('scroll', scrollHandler);
 
 // --- Dark Mode Logic (With Local Storage) ---
 if (themeToggleBtn && themeIcon) {
@@ -87,9 +101,12 @@ const appearanceObserver = new IntersectionObserver((entries, observer) => {
     });
 }, appearanceOptions);
 
-animatedElements.forEach(element => {
-    appearanceObserver.observe(element);
-});
+// Only observe elements that exist
+if (animatedElements.length > 0) {
+    animatedElements.forEach(element => {
+        appearanceObserver.observe(element);
+    });
+}
 
 // --- Active Nav Link Highlight Based on Scroll Position ---
 const sections = document.querySelectorAll('section[id]');
@@ -115,7 +132,9 @@ function highlightNavOnScroll() {
     });
 }
 
-window.addEventListener('scroll', highlightNavOnScroll);
+// Debounced scroll handler for better performance
+const debouncedHighlightNav = debounce(highlightNavOnScroll, 10);
+window.addEventListener('scroll', debouncedHighlightNav);
 
 // --- Modal Inquiry Logic ---
 function openModal(productName) {
@@ -123,6 +142,12 @@ function openModal(productName) {
         modal.classList.add('active');
         modalProductName.textContent = `Inquiring about: ${productName}`;
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Focus first input in modal for better accessibility
+        setTimeout(() => {
+            const firstInput = modal.querySelector('input');
+            if (firstInput) firstInput.focus();
+        }, 100);
     }
 }
 
@@ -147,6 +172,27 @@ if (modal) {
             closeModal();
         }
     });
+    
+    // Trap focus within modal for accessibility
+    modal.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        // Tab trap
+        if (e.key === 'Tab') {
+            const focusableElements = modal.querySelectorAll('input, button, textarea');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
+        }
+    });
 }
 
 // Add event listeners to all "Inquire Now" buttons
@@ -162,22 +208,24 @@ document.querySelectorAll('.btn-secondary').forEach(button => {
 });
 
 // --- Form Submissions Handling ---
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
     if (!contactForm || !formStatus) return;
 
     // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const company = document.getElementById('company').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
 
     // Basic validation
     if (!name || !email || !subject || !message) {
         formStatus.textContent = 'Please fill in all required fields.';
         formStatus.style.color = '#e74c3c';
         formStatus.style.background = 'rgba(231, 76, 60, 0.1)';
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
     }
 
@@ -187,38 +235,72 @@ function handleFormSubmit(e) {
         formStatus.textContent = 'Please enter a valid email address.';
         formStatus.style.color = '#e74c3c';
         formStatus.style.background = 'rgba(231, 76, 60, 0.1)';
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         return;
     }
 
-    // Simulate form submission
+    // Show loading state
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.style.cursor = 'not-allowed';
 
-    setTimeout(() => {
-        formStatus.textContent = '✓ Thank you! Your message has been sent successfully. We will get back to you within 24 hours.';
-        formStatus.style.color = '#27ae60';
-        formStatus.style.background = 'rgba(39, 174, 96, 0.1)';
-        
-        contactForm.reset();
+    try {
+        // Send data to backend API
+        const response = await fetch('http://localhost:5000/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                company: company,
+                subject: subject,
+                message: message
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            formStatus.textContent = result.message;
+            formStatus.style.color = '#27ae60';
+            formStatus.style.background = 'rgba(39, 174, 96, 0.1)';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = result.message || 'Error sending message. Please try again.';
+            formStatus.style.color = '#e74c3c';
+            formStatus.style.background = 'rgba(231, 76, 60, 0.1)';
+        }
+    } catch (error) {
+        formStatus.textContent = 'Error sending message. Please try again or contact us directly at info@shyamaengineering.com';
+        formStatus.style.color = '#e74c3c';
+        formStatus.style.background = 'rgba(231, 76, 60, 0.1)';
+        console.error('Form submission error:', error);
+    } finally {
+        // Reset button state
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
 
-        // Clear success message after 5 seconds
+        // Clear message after 5 seconds
         setTimeout(() => {
             formStatus.textContent = '';
         }, 5000);
-    }, 1500);
+    }
 }
 
 function handleModalSubmit(e) {
     e.preventDefault();
     
     const modalForm = e.target;
-    const modalName = document.getElementById('modalName').value;
-    const modalEmail = document.getElementById('modalEmail').value;
-    const modalRequirements = document.getElementById('modalRequirements').value;
+    const modalName = document.getElementById('modalName').value.trim();
+    const modalEmail = document.getElementById('modalEmail').value.trim();
+    const modalRequirements = document.getElementById('modalRequirements').value.trim();
 
     // Basic validation
     if (!modalName || !modalEmail || !modalRequirements) {
@@ -238,6 +320,8 @@ function handleModalSubmit(e) {
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
     submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.style.cursor = 'not-allowed';
 
     setTimeout(() => {
         alert('✓ Thank you for your inquiry! Our team will contact you within 24 hours.');
@@ -245,6 +329,8 @@ function handleModalSubmit(e) {
         closeModal();
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
     }, 1500);
 }
 
@@ -386,14 +472,6 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debounce to scroll-heavy functions
-const debouncedScrollHandler = debounce(() => {
-    highlightNavOnScroll();
-}, 10);
-
-window.removeEventListener('scroll', highlightNavOnScroll);
-window.addEventListener('scroll', debouncedScrollHandler);
-
 // --- Initialize on DOM Load ---
 document.addEventListener('DOMContentLoaded', () => {
     // Add loaded class to body for initial animations
@@ -405,6 +483,53 @@ document.addEventListener('DOMContentLoaded', () => {
     // Log initialization
     console.log('Shyama Engineering - Website Initialized');
     console.log('Features: Mobile Menu, Dark Mode, Scroll Animations, Form Validation, Modal System');
+    
+    // Add touch event optimizations for mobile
+    if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+        
+        // Improve touch scrolling performance
+        document.querySelectorAll('.hero-stats, .product-card, .service-box').forEach(el => {
+            el.style.transform = 'translateZ(0)';
+        });
+    }
+    
+    // Detect mobile device
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    // Handle orientation change on mobile
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            window.scrollTo(0, window.scrollY);
+            highlightNavOnScroll();
+        }, 100);
+    });
+    
+    // Resize handler for responsive adjustments
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Close mobile menu on resize to desktop
+            if (window.innerWidth > 768 && navLinks && mobileMenu) {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Update mobile class
+            if (window.innerWidth <= 768) {
+                document.body.classList.add('mobile-device');
+            } else {
+                document.body.classList.remove('mobile-device');
+            }
+            
+            highlightNavOnScroll();
+        }, 250);
+    });
 });
 
 // --- Error Handling ---
@@ -412,6 +537,25 @@ window.addEventListener('error', (e) => {
     console.error('Website Error:', e.message);
     // You can add error reporting here
 });
+
+// --- Network Status Detection ---
+window.addEventListener('online', () => {
+    console.log('Connection restored');
+});
+
+window.addEventListener('offline', () => {
+    console.log('Connection lost - Some features may be limited');
+});
+
+// --- Prevent zoom on double tap for mobile (optional) ---
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (event) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
 
 // --- Service Worker Registration (for PWA capabilities) ---
 if ('serviceWorker' in navigator) {
